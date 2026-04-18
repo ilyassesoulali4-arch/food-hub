@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHub - Fresh Food Delivery | Order Now</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===============================================
+         NAVBAR
+         =============================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span>FoodHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="index.html#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+            <button class="order-btn" onclick="location.href='menu.html'">🛒 Order Now</button>
+        </div>
+    </nav>
+
+    <!-- ===============================================
+         HERO SECTION
+         =============================================== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">🔥 Fresh & Delicious</div>
+                <h1 class="hero-title">Your Favorite Food, Delivered Fresh</h1>
+                <p class="hero-subtitle">Fast delivery • Best quality • Great prices</p>
+                <p class="hero-subtitle" style="font-size: 1rem; margin-bottom: 2rem;">Order from our restaurants and enjoy premium food at your doorstep in 30 minutes!</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="location.href='#menu'">Browse Menu</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Fresh Pizza" class="hero-image-content">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         STATS SECTION
+         =============================================== -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>50K+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Partner Restaurants</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Delivery Service</p>
+            </div>
+            <div class="stat-item">
+                <h3>30 Min</h3>
+                <p>Average Delivery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         MENU SHOWCASE
+         =============================================== -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Popular Menu</h2>
+                <p>Discover our delicious selection of fresh, quality food</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterCategory('all')">All Items</button>
+                <button class="category-btn" onclick="filterCategory('chicken')">🍗 Chicken</button>
+                <button class="category-btn" onclick="filterCategory('burger')">🍔 Burgers</button>
+                <button class="category-btn" onclick="filterCategory('pizza')">🍕 Pizza</button>
+                <button class="category-btn" onclick="filterCategory('dessert')">🍰 Desserts</button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Chicken -->
+                <div class="menu-item" data-category="chicken">
+                    <img src="assets/Grilled Chicken Breast.png" alt="Grilled Chicken Breast" class="item-image">
+                    <h3>Grilled Chicken Breast</h3>
+                    <p class="item-description">Tender juicy chicken breast with herbs and spices</p>
+                    <div class="item-price">$8.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Grilled Chicken Breast', 8.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="chicken">
+                    <img src="assets/Crispy Fried Chicken.png" alt="Crispy Fried Chicken" class="item-image">
+                    <h3>Crispy Fried Chicken</h3>
+                    <p class="item-description">Golden crispy chicken pieces with special sauce</p>
+                    <div class="item-price">$9.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Crispy Fried Chicken', 9.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="chicken">
+                    <img src="assets/depositphotos_81286228-stock-photo-spicy-homemade-buffalo-wings.png" alt="Spicy Buffalo Wings" class="item-image">
+                    <h3>Spicy Buffalo Wings</h3>
+                    <p class="item-description">Hot and spicy wings with ranch dip and celery</p>
+                    <div class="item-price">$11.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Spicy Buffalo Wings', 11.99)">Add to Cart</button>
+                </div>
+
+                <!-- Burgers -->
+                <div class="menu-item" data-category="burger">
+                    <img src="assets/Classic Burger.png" alt="Classic Burger" class="item-image">
+                    <h3>Classic Burger</h3>
+                    <p class="item-description">Juicy beef patty with fresh lettuce and tomato</p>
+                    <div class="item-price">$6.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Classic Burger', 6.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="burger">
+                    <img src="assets/Bacon Mushroom Burger.png" alt="Double Cheese Burger" class="item-image">
+                    <h3>Double Cheese Burger</h3>
+                    <p class="item-description">Premium double patties with melted cheddar, crispy bacon, and fresh toppings</p>
+                    <div class="item-price">$9.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Double Cheese Burger', 9.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="burger">
+                    <img src="assets/Bacon Mushroom Burger.png" alt="Bacon Mushroom Burger" class="item-image">
+                    <h3>Bacon Mushroom Burger</h3>
+                    <p class="item-description">Gourmet burger with crispy bacon and sautéed mushrooms</p>
+                    <div class="item-price">$10.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Bacon Mushroom Burger', 10.99)">Add to Cart</button>
+                </div>
+
+                <!-- Pizza -->
+                <div class="menu-item" data-category="pizza">
+                    <img src="assets/canva-pizza-margherita-cut-in-four-MAGZK4kUTPg.png" alt="Margherita Pizza" class="item-image">
+                    <h3>Margherita Pizza</h3>
+                    <p class="item-description">Fresh mozzarella with basil and tomato sauce</p>
+                    <div class="item-price">$10.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Margherita Pizza', 10.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="pizza">
+                    <img src="assets/Pepperoni Pizza.png" alt="Pepperoni Pizza" class="item-image">
+                    <h3>Pepperoni Pizza</h3>
+                    <p class="item-description">Loaded with pepperoni and extra cheese</p>
+                    <div class="item-price">$12.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Pepperoni Pizza', 12.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="pizza">
+                    <img src="assets/Vegetarian Pizza.png" alt="Vegetarian Pizza" class="item-image">
+                    <h3>Vegetarian Pizza</h3>
+                    <p class="item-description">Fresh veggies with mozzarella and herbs on crispy crust</p>
+                    <div class="item-price">$11.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Vegetarian Pizza', 11.99)">Add to Cart</button>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="dessert">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=80" alt="Chocolate Cake" class="item-image">
+                    <h3>Chocolate Cake</h3>
+                    <p class="item-description">Rich and moist chocolate cake with frosting</p>
+                    <div class="item-price">$5.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Chocolate Cake', 5.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="dessert">
+                    <img src="assets/Premium Ice Cream.png" alt="Premium Ice Cream" class="item-image">
+                    <h3>Premium Ice Cream</h3>
+                    <p class="item-description">Creamy vanilla ice cream with toppings</p>
+                    <div class="item-price">$4.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('Premium Ice Cream', 4.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item" data-category="dessert">
+                    <img src="assets/New York Cheesecake.png" alt="New York Cheesecake" class="item-image">
+                    <h3>New York Cheesecake</h3>
+                    <p class="item-description">Classic creamy cheesecake with strawberry topping</p>
+                    <div class="item-price">$7.99</div>
+                    <button class="btn btn-primary" onclick="addToCart('New York Cheesecake', 7.99)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         VIDEO SECTION
+         =============================================== -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>See How We Work</h2>
+                <p>Watch our delivery process and food quality standards</p>
+            </div>
+            <div class="video-container">
+                <iframe class="video-iframe" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="FoodHub Delivery Process"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+                <p class="video-description">Subscribe to our channel for food tips, recipes, and behind-the-scenes content! 👍</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         TESTIMONIALS / SOCIAL PROOF
+         =============================================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Join thousands of satisfied customers enjoying amazing food</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">😊</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Johnson</div>
+                            <div class="testimonial-role">Regular Customer</div>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The food arrived hot and fresh! The delivery was incredibly fast. I've ordered 10+ times and never been disappointed. Highly recommended!"</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">🥰</div>
+                        <div>
+                            <div class="testimonial-name">Mike Chen</div>
+                            <div class="testimonial-role">Business Owner</div>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I order for my team lunches all the time. The portions are generous and the prices are very competitive. Great service!"</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">🤩</div>
+                        <div>
+                            <div class="testimonial-name">Emma Davis</div>
+                            <div class="testimonial-role">Food Blogger</div>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Amazing quality and variety! FoodHub has the best restaurant partnerships. Definitely my go-to delivery app!"</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">👨</div>
+                        <div>
+                            <div class="testimonial-name">David Kumar</div>
+                            <div class="testimonial-role">Busy Professional</div>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Save so much time with FoodHub! The app is easy to use and their customer support is excellent."</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">👩</div>
+                        <div>
+                            <div class="testimonial-name">Lisa Martinez</div>
+                            <div class="testimonial-role">Student</div>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As a student, the prices are perfect for my budget. The discounts and promotions are unbeatable!"</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">🧑</div>
+                        <div>
+                            <div class="testimonial-name">John Wilson</div>
+                            <div class="testimonial-role">Family Man</div>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Perfect for family dinners! Quality is consistent and delivery is never late. Will keep using!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         PRICING SECTION
+         =============================================== -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple & Transparent Pricing</h2>
+                <p>Choose the perfect plan for your needs</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Basic Plan</div>
+                    <div class="pricing-price">Free</div>
+                    <p class="pricing-description">Get started with FoodHub</p>
+                    <ul class="pricing-features">
+                        <li>Order from any restaurant</li>
+                        <li>Standard delivery fee</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <div class="pricing-name">Pro Member</div>
+                    <div class="pricing-price">$9.99<span>/month</span></div>
+                    <p class="pricing-description">Best for regular users</p>
+                    <ul class="pricing-features">
+                        <li>All Basic features</li>
+                        <li>20% discount on all orders</li>
+                        <li>Free delivery (orders $15+)</li>
+                        <li>Priority support</li>
+                        <li>Exclusive deals</li>
+                    </ul>
+                    <button class="btn btn-primary">Upgrade Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-name">Premium Plan</div>
+                    <div class="pricing-price">$19.99<span>/month</span></div>
+                    <p class="pricing-description">Maximum savings</p>
+                    <ul class="pricing-features">
+                        <li>All Pro features</li>
+                        <li>30% discount on all orders</li>
+                        <li>Unlimited free delivery</li>
+                        <li>VIP support (24/7)</li>
+                        <li>Birthday rewards</li>
+                        <li>Cashback on every order</li>
+                    </ul>
+                    <button class="btn btn-primary">Upgrade Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         ABOUT SECTION
+         =============================================== -->
+    <section class="menu" id="about" style="background: linear-gradient(135deg, #FAFAFA 0%, #FFF5E6 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose FoodHub?</h2>
+                <p>Here's what makes us different</p>
+            </div>
+
+            <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">⚡</span>
+                    <h3>Lightning Fast</h3>
+                    <p class="item-description">30 minutes or it's free! Lightning-fast delivery to your doorstep.</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">🤝</span>
+                    <h3>Best Restaurants</h3>
+                    <p class="item-description">Partnered with 500+ quality restaurants for variety.</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">💰</span>
+                    <h3>Great Prices</h3>
+                    <p class="item-description">Competitive pricing with frequent discounts and deals.</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">📱</span>
+                    <h3>Easy App</h3>
+                    <p class="item-description">Simple and intuitive interface for quick ordering.</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">🔒</span>
+                    <h3>Secure Payment</h3>
+                    <p class="item-description">Multiple payment options with 100% secure transactions.</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">👥</span>
+                    <h3>24/7 Support</h3>
+                    <p class="item-description">Dedicated support team ready to help anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         CONTACT SECTION
+         =============================================== -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2>Get In Touch</h2>
+                <p>Have questions? We'd love to hear from you!</p>
+            </div>
+
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <div class="form-error">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    <div class="form-error">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                    <div class="form-error">Please enter a subject</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                    <div class="form-error">Please enter your message</div>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message ✉️</button>
+                <div id="successMessage" style="display: none; margin-top: 1rem; padding: 1rem; background: #2ECC71; color: white; border-radius: 0.5rem; text-align: center;">
+                    Thank you! Your message has been sent successfully. We'll get back to you soon! 🎉
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         FOOTER
+         =============================================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🍽️ FoodHub</h4>
+                <p>Your ultimate food delivery partner. Fresh food, fast delivery, great prices.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Browse Menu</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Become a Partner</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodHub. All rights reserved. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- ===============================================
+         SCRIPTS
+         =============================================== -->
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Menu Filter
+        function filterCategory(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.category-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    item.style.animation = 'scale-in 0.6s ease';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Add to Cart
+        function addToCart(itemName, price) {
+            alert(`✅ ${itemName} ($${price}) added to cart!`);
+        }
+
+        // Form Validation
+        function validateForm() {
+            const fields = ['name', 'email', 'subject', 'message'];
+            let isValid = true;
+
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                const group = input.closest('.form-group');
+
+                if (!input.value.trim()) {
+                    group.classList.add('error');
+                    isValid = false;
+                } else {
+                    group.classList.remove('error');
+                    
+                    // Email validation
+                    if (field === 'email' && !isValidEmail(input.value)) {
+                        group.classList.add('error');
+                        isValid = false;
+                    }
+                }
+            });
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            if (validateForm()) {
+                const form = document.getElementById('contactForm');
+                const successMsg = document.getElementById('successMessage');
+                
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+
+                setTimeout(() => {
+                    form.reset();
+                    form.style.display = 'block';
+                    successMsg.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Smooth Scroll
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Real-time form validation
+        ['name', 'email', 'subject', 'message'].forEach(fieldId => {
+            document.getElementById(fieldId)?.addEventListener('blur', (e) => {
+                const input = e.target;
+                const group = input.closest('.form-group');
+                
+                if (!input.value.trim()) {
+                    group.classList.add('error');
+                } else if (fieldId === 'email' && !isValidEmail(input.value)) {
+                    group.classList.add('error');
+                } else {
+                    group.classList.remove('error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

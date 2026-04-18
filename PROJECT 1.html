@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakaria Chicken Store - Fresh & Delicious</title>
+    <link rel="stylesheet" href="PROJECT 1.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍗</span>
+                <span class="logo-text">Zakaria Chicken</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="order-btn">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Zakaria Chicken Store</h1>
+            <p class="hero-subtitle">Fresh, Delicious, and Authentic Chicken Dishes</p>
+            <p class="hero-description">Experience the finest grilled and fried chicken prepared with traditional recipes and premium ingredients.</p>
+            <button class="btn btn-hero" onclick="scrollToMenu()">View Our Menu</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-badge">🔥 Fresh Daily</div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="section-header">
+            <h2>Our Delicious Menu</h2>
+            <p>Carefully crafted dishes prepared with fresh ingredients</p>
+        </div>
+
+        <div class="menu-categories">
+            <button class="category-btn active" onclick="filterMenu('all')">All</button>
+            <button class="category-btn" onclick="filterMenu('grilled')">Grilled</button>
+            <button class="category-btn" onclick="filterMenu('fried')">Fried</button>
+            <button class="category-btn" onclick="filterMenu('combo')">Combos</button>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Grilled Items -->
+            <div class="menu-item" data-category="grilled">
+                <div class="item-image">🍗</div>
+                <h3>Grilled Chicken Breast</h3>
+                <p class="item-description">Tender grilled chicken breast with herbs and spices</p>
+                <div class="item-price">$8.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <div class="menu-item" data-category="grilled">
+                <div class="item-image">🍖</div>
+                <h3>Grilled Chicken Thighs</h3>
+                <p class="item-description">Juicy grilled thighs, perfectly seasoned</p>
+                <div class="item-price">$7.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <div class="menu-item" data-category="grilled">
+                <div class="item-image">🔥</div>
+                <h3>Spicy Grilled Wings</h3>
+                <p class="item-description">Hot and spicy grilled chicken wings</p>
+                <div class="item-price">$6.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <!-- Fried Items -->
+            <div class="menu-item" data-category="fried">
+                <div class="item-image">🍟</div>
+                <h3>Crispy Fried Chicken</h3>
+                <p class="item-description">Golden crispy fried chicken pieces</p>
+                <div class="item-price">$8.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <div class="menu-item" data-category="fried">
+                <div class="item-image">🍗</div>
+                <h3>Fried Chicken Drumsticks</h3>
+                <p class="item-description">Crunchy drumsticks with coating</p>
+                <div class="item-price">$6.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <div class="menu-item" data-category="fried">
+                <div class="item-image">😋</div>
+                <h3>Fried Chicken Strips</h3>
+                <p class="item-description">Tender strips with special sauce</p>
+                <div class="item-price">$7.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <!-- Combo Deals -->
+            <div class="menu-item" data-category="combo">
+                <div class="item-image">🌮</div>
+                <h3>Family Combo Pack</h3>
+                <p class="item-description">8 pieces chicken + fries + coleslaw</p>
+                <div class="item-price">$19.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <div class="menu-item" data-category="combo">
+                <div class="item-image">🥗</div>
+                <h3>Mixed Grill Platter</h3>
+                <p class="item-description">Assorted grilled chicken with salad</p>
+                <div class="item-price">$14.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+
+            <div class="menu-item" data-category="combo">
+                <div class="item-image">💝</div>
+                <h3>Lovers Combo</h3>
+                <p class="item-description">Perfect for two - chicken & sides</p>
+                <div class="item-price">$24.99</div>
+                <button class="btn btn-add">Add to Order</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Why Choose Zakaria Chicken Store?</h2>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">✨</div>
+                        <h3>Fresh Ingredients</h3>
+                        <p>All chicken is fresh daily, never frozen</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👨‍🍳</div>
+                        <h3>Expert Chefs</h3>
+                        <p>Experienced chefs with years of expertise</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Service</h3>
+                        <p>Quick preparation without compromising quality</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Best Taste</h3>
+                        <p>Award-winning recipes and authentic flavors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header">
+            <h2>Photo Gallery</h2>
+            <p>Check out our delicious creations</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">🍗</div>
+            <div class="gallery-item">🍖</div>
+            <div class="gallery-item">🔥</div>
+            <div class="gallery-item">🍟</div>
+            <div class="gallery-item">🥗</div>
+            <div class="gallery-item">🌮</div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>We're ready to serve you the best chicken in town</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>123 Main Street<br>Your City, ST 12345</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>+1 (555) 123-4567<br>Available 24/7</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⏰</div>
+                    <h3>Hours</h3>
+                    <p>Mon-Sun: 11:00 AM - 10:00 PM<br>Delivery 24/7</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Zakaria Chicken Store</h4>
+                <p>Serving the freshest chicken in town since 2015</p>
+                <div class="social-links">
+                    <a href="#">📘 Facebook</a>
+                    <a href="#">📷 Instagram</a>
+                    <a href="#">🐦 Twitter</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Delivery Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Special Offers</h4>
+                <ul>
+                    <li><a href="#">Daily Deals</a></li>
+                    <li><a href="#">Loyalty Program</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zakaria Chicken Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll to menu
+        function scrollToMenu() {
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Filter menu items
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.category-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter items
+            if (category === 'all') {
+                items.forEach(item => {
+                    item.style.display = 'block';
+                    setTimeout(() => item.classList.add('show'), 10);
+                });
+            } else {
+                items.forEach(item => {
+                    if (item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.classList.add('show'), 10);
+                    } else {
+                        item.classList.remove('show');
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            }
+        }
+
+        // Add to order functionality
+        document.querySelectorAll('.btn-add').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Item added to order! 🎉');
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you shortly.');
+            this.reset();
+        });
+
+        // Order button
+        document.querySelector('.order-btn').addEventListener('click', function() {
+            alert('Order system coming soon! Please call us for orders.');
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FoodHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===============================================
+         NAVBAR
+         =============================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span>FoodHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link active">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+            <button class="order-btn" onclick="location.href='index.html#menu'">🛒 Order Now</button>
+        </div>
+    </nav>
+
+    <!-- ===============================================
+         PAGE HEADER
+         =============================================== -->
+    <section class="hero" style="min-height: 300px; padding: 3rem 2rem;">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" style="font-size: 2.5rem;">Contact FoodHub</h1>
+                <p class="hero-subtitle">We're here to help! Reach out to us anytime.</p>
+                <p class="hero-subtitle" style="font-size: 1rem;">Have questions? Want to partner with us? Just want to say hello? Get in touch below!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         CONTACT INFO CARDS
+         =============================================== -->
+    <section style="background: var(--bg-white); padding: 4rem 2rem;">
+        <div class="container">
+            <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 4rem;">
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">📍</span>
+                    <h3>Visit Us</h3>
+                    <p class="item-description">
+                        123 Food Street<br>
+                        Downtown District<br>
+                        Your City, ST 12345
+                    </p>
+                    <button class="btn btn-primary" style="width: 100%;">Get Directions</button>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">📞</span>
+                    <h3>Call Us</h3>
+                    <p class="item-description">
+                        <strong>Phone:</strong><br>
+                        +1 (555) 123-4567<br>
+                        +1 (555) 987-6543<br>
+                        <br>
+                        <small>Available 24/7 for orders & inquiries</small>
+                    </p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="item-image" style="font-size: 3rem;">✉️</span>
+                    <h3>Email Us</h3>
+                    <p class="item-description">
+                        <strong>Support:</strong><br>
+                        support@foodhub.com<br>
+                        <br>
+                        <strong>Partnerships:</strong><br>
+                        partners@foodhub.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         CONTACT FORM
+         =============================================== -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2>Send us a Message</h2>
+                <p>Fill out the form below and we'll respond within 24 hours</p>
+            </div>
+
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" minlength="2" maxlength="50" required>
+                    <div class="form-error">Please enter a valid name (2-50 characters)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    <div class="form-error">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    <div class="form-error">Please enter a valid phone number</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="How can we help?" minlength="5" maxlength="100" required>
+                    <div class="form-error">Please enter a subject (5-100 characters)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" style="width: 100%; padding: 0.9rem 1rem; border: 2px solid var(--border); border-radius: 0.8rem; font-family: inherit; font-size: 1rem;" required>
+                        <option value="">Select a category...</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Customer Support</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                    </select>
+                    <div class="form-error">Please select a category</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." minlength="10" maxlength="1000" required></textarea>
+                    <div class="form-error">Please enter your message (10-1000 characters)</div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal;">
+                        <input type="checkbox" id="subscribe" name="subscribe">
+                        <span>Subscribe to our newsletter for exclusive offers</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit" style="margin-top: 2rem;">Send Message ✉️</button>
+                
+                <div id="successMessage" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, #2ECC71, #27AE60); color: white; border-radius: 0.8rem; text-align: center; font-weight: 600;">
+                    ✅ Thank you! Your message has been sent successfully. We'll get back to you soon! 🎉
+                </div>
+
+                <div id="errorMessage" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background: #E74C3C; color: white; border-radius: 0.8rem; text-align: center; font-weight: 600;">
+                    ❌ Oops! Something went wrong. Please check your information and try again.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         FAQ SECTION
+         =============================================== -->
+    <section style="background: linear-gradient(135deg, #FAFAFA 0%, #FFF5E6 100%); padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Can't find what you're looking for?</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">❓ How long does delivery take?</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Most orders are delivered within 30 minutes. Delivery time depends on your location and current order volume.</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">❓ What payment methods do you accept?</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">We accept all major credit/debit cards, digital wallets (Apple Pay, Google Pay), and cash on delivery in selected areas.</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">❓ Can I cancel my order?</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Yes! You can cancel orders within 5 minutes of placing. Contact our support team immediately for cancellation requests after that.</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">❓ How can I become a restaurant partner?</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">We're always looking for great restaurants to partner with! Email us at partners@foodhub.com with your restaurant details and menu.</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">❓ Do you have vegetarian/vegan options?</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Yes! Most of our partner restaurants offer vegetarian and vegan options. You can filter by dietary preferences in the menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         FOOTER
+         =============================================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🍽️ FoodHub</h4>
+                <p>Your ultimate food delivery partner. Fresh food, fast delivery, great prices.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#menu">Browse Menu</a></li>
+                    <li><a href="index.html#testimonials">Reviews</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Become a Partner</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodHub. All rights reserved. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- ===============================================
+         SCRIPTS
+         =============================================== -->
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Advanced Form Validation
+        function validateForm() {
+            const fields = {
+                'name': { min: 2, max: 50, type: 'text' },
+                'email': { type: 'email' },
+                'phone': { type: 'tel', optional: true },
+                'subject': { min: 5, max: 100, type: 'text' },
+                'category': { type: 'select' },
+                'message': { min: 10, max: 1000, type: 'text' }
+            };
+
+            let isValid = true;
+
+            Object.keys(fields).forEach(fieldId => {
+                const input = document.getElementById(fieldId);
+                const group = input.closest('.form-group');
+                const field = fields[fieldId];
+
+                if (!input.value.trim()) {
+                    if (!field.optional) {
+                        group.classList.add('error');
+                        isValid = false;
+                    } else {
+                        group.classList.remove('error');
+                    }
+                    return;
+                }
+
+                group.classList.remove('error');
+
+                // Email validation
+                if (field.type === 'email') {
+                    if (!isValidEmail(input.value)) {
+                        group.classList.add('error');
+                        isValid = false;
+                    }
+                }
+
+                // Phone validation (optional but validate if provided)
+                if (field.type === 'tel' && input.value.trim() && !isValidPhone(input.value)) {
+                    group.classList.add('error');
+                    isValid = false;
+                }
+
+                // Length validation
+                if (field.min && input.value.length < field.min) {
+                    group.classList.add('error');
+                    isValid = false;
+                }
+                if (field.max && input.value.length > field.max) {
+                    group.classList.add('error');
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function isValidPhone(phone) {
+            const regex = /^[\d\s\-\+\(\)]{10,}$/;
+            return regex.test(phone);
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            if (validateForm()) {
+                const form = document.getElementById('contactForm');
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+
+                // Simulate form submission (in real app, send to server)
+                console.log('Form submitted:', data);
+
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+
+                setTimeout(() => {
+                    form.reset();
+                    form.style.display = 'block';
+                    successMsg.style.display = 'none';
+                }, 3000);
+            } else {
+                errorMsg.style.display = 'block';
+                setTimeout(() => {
+                    errorMsg.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Real-time form validation
+        ['name', 'email', 'subject', 'message'].forEach(fieldId => {
+            document.getElementById(fieldId)?.addEventListener('blur', (e) => {
+                const input = e.target;
+                const group = input.closest('.form-group');
+                
+                if (!input.value.trim()) {
+                    group.classList.add('error');
+                } else if (fieldId === 'email' && !isValidEmail(input.value)) {
+                    group.classList.add('error');
+                } else {
+                    group.classList.remove('error');
+                }
+            });
+        });
+
+        // Select styling for dark mode
+        document.getElementById('category').addEventListener('change', function() {
+            if (this.value) {
+                this.closest('.form-group').classList.remove('error');
+            }
+        });
+    </script>
+</body>
+</html>

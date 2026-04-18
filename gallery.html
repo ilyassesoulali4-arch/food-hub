@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - FoodHub | See Our Food & Restaurants</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #FAFAFA, #FFF5E6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+        }
+
+        .gallery-content h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .gallery-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        body.dark-mode .gallery-card {
+            background: var(--bg-card-dark);
+        }
+
+        body.dark-mode .gallery-content h3 {
+            color: var(--text-white);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===============================================
+         NAVBAR
+         =============================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span>FoodHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="#gallery" class="nav-link active">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+            <button class="order-btn" onclick="location.href='menu.html'">🛒 Order Now</button>
+        </div>
+    </nav>
+
+    <!-- ===============================================
+         PAGE HEADER
+         =============================================== -->
+    <section class="hero" style="min-height: 300px; padding: 3rem 2rem;">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" style="font-size: 2.5rem;">Food Gallery</h1>
+                <p class="hero-subtitle">Browse our delicious creations and restaurant partners</p>
+                <p class="hero-subtitle" style="font-size: 1rem;">See what's cooking at FoodHub! From mouth-watering dishes to beautiful dining experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         GALLERY SECTION
+         =============================================== -->
+    <section style="background: var(--bg-light); padding: 4rem 2rem;" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Dishes</h2>
+                <p>A visual feast of our most popular menu items</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-image">🍗</div>
+                    <div class="gallery-content">
+                        <h3>Crispy Fried Chicken</h3>
+                        <p>Golden brown and perfectly seasoned. Our signature dish loved by thousands of customers.</p>
+                        <span class="gallery-tag">🍗 Chicken</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🍔</div>
+                    <div class="gallery-content">
+                        <h3>
+Premium Burgers</h3>
+                        <p>Juicy beef patties with fresh toppings. Choose from classic to gourmet options.</p>
+                        <span class="gallery-tag">🍔 Burger</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🍕</div>
+                    <div class="gallery-content">
+                        <h3>Artisan Pizzas</h3>
+                        <p>Wood-fired oven pizzas with fresh ingredients. Perfect for sharing or solo indulgence.</p>
+                        <span class="gallery-tag">🍕 Pizza</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🍢</div>
+                    <div class="gallery-content">
+                        <h3>Fresh Sushi</h3>
+                        <p>Prepared by expert sushi chefs. Premium fish and traditional Japanese techniques.</p>
+                        <span class="gallery-tag">🍢 Asian</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🍝</div>
+                    <div class="gallery-content">
+                        <h3>Authentic Pasta</h3>
+                        <p>Homemade pasta with signature Italian sauces. Cooked with love and tradition.</p>
+                        <span class="gallery-tag">🍝 Italian</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🌮</div>
+                    <div class="gallery-content">
+                        <h3>Mexican Delights</h3>
+                        <p>Tacos, burritos, and quesadillas with authentic flavors and fresh ingredients.</p>
+                        <span class="gallery-tag">🌮 Mexican</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🍰</div>
+                    <div class="gallery-content">
+                        <h3>Decadent Desserts</h3>
+                        <p>Cakes, pastries, and sweet treats. Perfect ending to any meal.</p>
+                        <span class="gallery-tag">🍰 Dessert</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">☕</div>
+                    <div class="gallery-content">
+                        <h3>Premium Beverages</h3>
+                        <p>Coffee, tea, smoothies, and specialty drinks. Crafted with precision and care.</p>
+                        <span class="gallery-tag">☕ Drinks</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🥗</div>
+                    <div class="gallery-content">
+                        <h3>Healthy Salads</h3>
+                        <p>Fresh, nutritious salads with organic vegetables. Perfect for health-conscious choices.</p>
+                        <span class="gallery-tag">🥗 Salads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         RESTAURANTS SECTION
+         =============================================== -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partner Restaurants</h2>
+                <p>Trusted restaurants delivering quality food</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #FFE5B4, #FFD9B3);">🍗</div>
+                    <div class="gallery-content">
+                        <h3>Zakaria Chicken</h3>
+                        <p>Specialty: Grilled & Fried Chicken | Rating: ⭐⭐⭐⭐⭐ (2.5k reviews)</p>
+                        <span class="gallery-tag">🏆 Top Rated</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #FFD700, #FFC700);">🍔</div>
+                    <div class="gallery-content">
+                        <h3>Burger Palace</h3>
+                        <p>Specialty: Gourmet Burgers | Rating: ⭐⭐⭐⭐⭐ (1.8k reviews)</p>
+                        <span class="gallery-tag">⚡ Fast</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">🍕</div>
+                    <div class="gallery-content">
+                        <h3>Pizza Haven</h3>
+                        <p>Specialty: Wood-fired Pizza | Rating: ⭐⭐⭐⭐⭐ (2.1k reviews)</p>
+                        <span class="gallery-tag">🔥 Hot Picks</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #90EE90, #98FB98);">🍢</div>
+                    <div class="gallery-content">
+                        <h3>Sushi Master</h3>
+                        <p>Specialty: Fresh Sushi | Rating: ⭐⭐⭐⭐⭐ (1.5k reviews)</p>
+                        <span class="gallery-tag">✨ Premium</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #FFB6C1, #FFC0CB);">🍝</div>
+                    <div class="gallery-content">
+                        <h3>Italian Trattoria</h3>
+                        <p>Specialty: Authentic Pasta | Rating: ⭐⭐⭐⭐⭐ (1.2k reviews)</p>
+                        <span class="gallery-tag">🇮🇹 Authentic</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #87CEEB, #87CEFA);">🌮</div>
+                    <div class="gallery-content">
+                        <h3>Mexico Lindo</h3>
+                        <p>Specialty: Mexican Cuisine | Rating: ⭐⭐⭐⭐⭐ (980 reviews)</p>
+                        <span class="gallery-tag">🌶️ Spicy</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #DDA0DD, #EE82EE);">🍰</div>
+                    <div class="gallery-content">
+                        <h3>Sweet Treats Bakery</h3>
+                        <p>Specialty: Pastries & Desserts | Rating: ⭐⭐⭐⭐⭐ (1.7k reviews)</p>
+                        <span class="gallery-tag">🎂 Delish</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #F0E68C, #FFFFE0);">☕</div>
+                    <div class="gallery-content">
+                        <h3>Coffee Corner</h3>
+                        <p>Specialty: Premium Coffee | Rating: ⭐⭐⭐⭐⭐ (890 reviews)</p>
+                        <span class="gallery-tag">☕ Cozy</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #98FB98, #90EE90);">🥗</div>
+                    <div class="gallery-content">
+                        <h3>Green Leaf Café</h3>
+                        <p>Specialty: Healthy Salads | Rating: ⭐⭐⭐⭐⭐ (1.1k reviews)</p>
+                        <span class="gallery-tag">💚 Healthy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         BEHIND THE SCENES SECTION
+         =============================================== -->
+    <section style="background: linear-gradient(135deg, #FAFAFA 0%, #FFF5E6 100%); padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Behind the Scenes</h2>
+                <p>Meet the people making FoodHub possible</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-image">👨‍🍳</div>
+                    <div class="gallery-content">
+                        <h3>Expert Chefs</h3>
+                        <p>Our partner restaurants employ expert chefs with years of experience and passion for food.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🚴‍♂️</div>
+                    <div class="gallery-content">
+                        <h3>Delivery Partners</h3>
+                        <p>Our dedicated delivery team ensures your food arrives fresh and hot, every time!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">📱</div>
+                    <div class="gallery-content">
+                        <h3>Tech Team</h3>
+                        <p>Our developers build the platform that connects delicious food with hungry customers.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">💼</div>
+                    <div class="gallery-content">
+                        <h3>Support Team</h3>
+                        <p>24/7 customer support ready to help with any questions or concerns. We're always here!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🎯</div>
+                    <div class="gallery-content">
+                        <h3>Marketing Team</h3>
+                        <p>We work hard to bring you exclusive deals, promotions, and rewards for being loyal.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-image">🌟</div>
+                    <div class="gallery-content">
+                        <h3>Quality Assurance</h3>
+                        <p>Each order is monitored to ensure quality, speed, and your complete satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         CTA SECTION
+         =============================================== -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 4rem 2rem; color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Order?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Browse our full menu and get your favorite food delivered in 30 minutes!</p>
+            <button class="btn btn-primary" onclick="location.href='menu.html'" style="background: white; color: var(--primary); border: none;">Browse Menu Now</button>
+        </div>
+    </section>
+
+    <!-- ===============================================
+         FOOTER
+         =============================================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🍽️ FoodHub</h4>
+                <p>Your ultimate food delivery partner. Fresh food, fast delivery, great prices.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="menu.html">Browse Menu</a></li>
+                    <li><a href="index.html#testimonials">Reviews</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Become a Partner</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodHub. All rights reserved. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- ===============================================
+         SCRIPTS
+         =============================================== -->
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
